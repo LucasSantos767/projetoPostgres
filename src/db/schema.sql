@@ -1,0 +1,23 @@
+CREATE DATABASE projetoknex;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR NOT NULL,
+  email VARCHAR UNIQUE NOT NULL,
+  senha TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS produtos (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR NOT NULL,
+  bar_code TEXT UNIQUE NOT NULL,
+  quantidade TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS caixa (
+  id SERIAL PRIMARY KEY,
+  id_Usuario INTEGER NOT NULL,
+  id_Produto INTEGER NOT NULL,
+  quantProduto INTEGER NOT NULL,
+FOREIGN KEY (id_Usuario) REFERENCES usuarios (id),
+FOREIGN KEY (id_Produto) REFERENCES produtos (id)
+);
