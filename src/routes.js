@@ -24,6 +24,10 @@ routes.delete('/usuarios', (req, res) => {
   usuariosController.deleteOne(req, res)
 });
 
+routes.patch('/usuarios',(req,res)=>{
+  usuariosController.patch(req,res);
+})
+
 routes.get('/usuarios/one', (req, res) => {
   usuariosController.getOne(req, res)
 });
@@ -45,6 +49,7 @@ routes.get('/produtos/one', (req, res) => {
 routes.patch('/produtos',(req,res)=>{
   produtosController.patch(req,res);
 })
+
 routes.post('/caixa', (req, res) => {
     caixaController.create(req, res)
   });

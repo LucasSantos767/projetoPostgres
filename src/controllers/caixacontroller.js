@@ -35,8 +35,7 @@ async patch(req, res) {
       id_produto,
       quantproduto
     } = req.body;
-    const caixa = await this.conexao('caixa').update({
-        id,
+    const caixa = await this.conexao('caixa').where('id',id).update({
         id_usuario,
         id_produto,
         quantproduto

@@ -41,8 +41,7 @@ class ProdutosControllers {
       bar_code,
       quantidade
     } = req.body;
-    const produtos = await this.conexao('produtos').update({
-        id,
+    const produtos = await this.conexao('produtos').where('id',id).update({
         nome,
         bar_code,
       quantidade
