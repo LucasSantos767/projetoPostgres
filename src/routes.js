@@ -1,7 +1,6 @@
 const express = require('express');
 const UsuariosControllers = require('./controllers/usuacontroller');
 const ProdutosControllers = require('./controllers/prodcontroller');
-const CaixaControllers = require('./controllers/caixacontroller');
 const caixaControllers = require('./controllers/caixacontroller');
 const routes = express();
 const usuariosController = new UsuariosControllers();
