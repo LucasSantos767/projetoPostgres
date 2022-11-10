@@ -1,7 +1,7 @@
 const express = require('express');
-const UsuariosControllers = require('./controllers/usuacontroller');
-const ProdutosControllers = require('./controllers/prodcontroller');
-const caixaControllers = require('./controllers/caixacontroller');
+const UsuariosControllers = require('./controllers/user-controller');
+const ProdutosControllers = require('./controllers/produto-controller');
+const caixaControllers = require('./controllers/caixa-controller');
 const routes = express();
 const usuariosController = new UsuariosControllers();
 const produtosController = new ProdutosControllers();
@@ -23,8 +23,8 @@ routes.delete('/usuarios', (req, res) => {
   usuariosController.deleteOne(req, res)
 });
 
-routes.patch('/usuarios',(req,res)=>{
-  usuariosController.patch(req,res);
+routes.patch('/usuarios', (req, res) => {
+  usuariosController.patch(req, res);
 })
 
 routes.get('/usuarios/one', (req, res) => {
@@ -45,21 +45,22 @@ routes.delete('/produtos', (req, res) => {
 routes.get('/produtos/one', (req, res) => {
   produtosController.getOne(req, res)
 });
-routes.patch('/produtos',(req,res)=>{
-  produtosController.patch(req,res);
+routes.patch('/produtos', (req, res) => {
+  produtosController.patch(req, res);
 })
 
 routes.post('/caixa', (req, res) => {
-    caixaController.create(req, res)
-  });
-  
-  routes.get('/caixa', (req, res) => {
-    caixaController.getAll(req, res)
-  });
-  routes.delete('/caixa', (req, res) => {
-    caixaController.deleteOne(req, res)
-  });
-  routes.patch('/caixa',(req,res)=>{
-      caixaController.patch(req,res);
-  })
+  caixaController.create(req, res)
+});
+
+routes.get('/caixa', (req, res) => {
+  caixaController.getAll(req, res)
+});
+routes.delete('/caixa', (req, res) => {
+  caixaController.deleteOne(req, res)
+});
+routes.patch('/caixa', (req, res) => {
+  caixaController.patch(req, res);
+})
+
 module.exports = routes;
